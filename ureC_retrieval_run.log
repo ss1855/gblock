@@ -539,3 +539,40 @@
 [539/576] Rugosimonospora acidiphila (WP_345632296.1): success
 [540/576] Micromonospora sonneratiae (GAB3160285.1): success
 [541/576] Roseburia intestinalis (RHN05187.1): success
+[542/576] Actinomycetospora straminea (WP_345379130.1): success
+[543/576] Nocardioides glacieisoli (WP_129478299.1): success
+[544/576] Streptomyces camponoticapitis (WP_475929620.1): success
+[545/576] Microbispora corallina (WP_204055345.1): success
+[546/576] Mycobacterium saskatchewanense (WP_495464995.1): failed - no /coded_by qualifier found
+[547/576] Spiractinospora alimapuensis (WP_236540795.1): success
+[548/576] Mycobacterium pallens (BHA43144.1): success
+[549/576] Mycobacterium barrassiae (WP_267304965.1): success
+[550/576] Trebonia kvetii (WP_145850783.1): success
+[551/576] Actinomadura rudentiformis (WP_151564485.1): success
+[552/576] Actinomadura nitritigenes (WP_433251798.1): success
+[553/576] Staphylococcus massiliensis (WP_238101730.1): success
+[554/576] Sphaerimonospora thailandensis (WP_204011866.1): success
+[555/576] Actinomadura keratinilytica (WP_345025429.1): success
+[556/576] Actinomadura bangladeshensis (WP_163056227.1): success
+[557/576] Actinoallomurus acanthiterrae (WP_460347666.1): success
+[558/576] Corynebacterium tapiri (GAB3942983.1): success
+[559/576] Streptomyces qinglanensis (WP_398760490.1): success
+[560/576] Streptomyces pseudogriseolus (WP_478640462.1): success
+[561/576] Streptomyces prasinosporus (WP_193459734.1): success
+[562/576] Streptomyces parmotrematis (WP_358233444.1): failed - no /coded_by qualifier found
+[563/576] Streptomyces oryzae (WP_209239739.1): success
+[564/576] Streptomyces nigra (WP_399713753.1): success
+[565/576] Streptomyces lannensis (WP_345553100.1): success
+[566/576] Dietzia natronolimnaea (WP_428201695.1): success
+[567/576] Streptomyces indonesiensis (WP_490699942.1): success
+[568/576] Streptomyces hirsutus (WP_466539182.1): success
+[569/576] Streptomyces gobiensis (WP_232271632.1): success
+[570/576] Streptomyces rubrisoli (WP_255924540.1): success
+[571/576] Gordonia effusa (WP_007319182.1): success
+[572/576] Streptomyces rutgersensis (GFH67696.1): success
+[573/576] Marinitenerispora sediminis (WP_114397613.1): success
+[574/576] Streptomyces variabilis (WP_460088792.1): success
+[575/576] Streptomyces tateyamensis (WP_110669877.1): success
+[576/576] Streptomyces samsunensis (WP_392982654.1): success
+
+Done. Sequences written to ureC_sequences.fasta, log written to ureC_retrieval_log.csv
