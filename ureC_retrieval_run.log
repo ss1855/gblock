@@ -200,3 +200,13 @@
 [200/576] Bacillus velezensis (WP_494398742.1): success
 [201/576] Dietzia cinnamea (WVF62825.1): success
 [202/576] Rhodococcus phenolicus (WP_211270166.1): success
+[203/576] Mycolicibacillus trivialis (WP_085111284.1): success
+[204/576] Oceanicella actignis (WP_148922096.1): success
+[205/576] Arthrobacter crystallopoietes (WP_494112389.1): failed - no /coded_by qualifier found
+[206/576] Virgibacillus soli (WP_320380707.1): success
+[207/576] Brachybacterium horti (GAB4097166.1): success
+[208/576] Brachybacterium ginsengisoli (WP_096800208.1): success
+[209/576] Paludisphaera borealis (WP_309382848.1): success
+[210/576] Oceanobacillus oncorhynchi (WP_193064541.1): success
+[211/576] Streptomyces mimosae (WP_139674872.1): success
+[212/576] Arthrobacter celericrescens (WP_120523034.1): success
