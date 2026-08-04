@@ -1,0 +1,13 @@
+primer,position,literature_base,majority_base_538pool,majority_freq_pct,full_base_distribution,differs
+fwd,2,T,C,62.1,"{'C': 334, 'A': 33, 'T': 148, 'G': 23}",True
+fwd,5,C,C,66.9,"{'C': 360, 'T': 178}",False
+fwd,8,C,C,48.5,"{'C': 261, 'G': 207, 'A': 41, 'T': 29}",False
+fwd,11,C,C,71.6,"{'C': 385, 'T': 153}",False
+fwd,14,C,C,63.6,"{'C': 342, 'T': 196}",False
+fwd,17,C,C,53.3,"{'C': 287, 'T': 57, 'A': 95, 'G': 99}",False
+rev,3,C,C,37.2,"{'G': 196, 'C': 200, 'A': 42, 'T': 100}",False
+rev,6,C,C,58.6,"{'G': 85, 'C': 315, 'A': 28, 'T': 110}",False
+rev,9,G,G,63.2,"{'G': 340, 'A': 179, 'T': 5, 'C': 14}",False
+rev,12,G,G,53.2,"{'G': 286, 'A': 45, 'T': 76, 'C': 131}",False
+rev,15,C,C,42.9,"{'C': 231, 'G': 155, 'A': 72, 'T': 80}",False
+rev,18,G,G,38.7,"{'C': 112, 'A': 95, 'T': 123, 'G': 208}",False
