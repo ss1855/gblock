@@ -1,0 +1,19 @@
+species,genus,status,seq_len,fwd_best_pos,fwd_best_mm,fwd_mm_at_expected_pos,fwd_near_expected_pos,fwd_3prime_mm_of5,rev_best_pos,rev_best_mm,rev_mm_at_expected_pos,rev_near_expected_pos,rev_3prime_mm_of5,category
+Alkalihalophilus pseudofirmus,Alkalihalophilus,no_match_both,1710,811,7,7,True,2,896,6,6,True,1,diverged_present
+Anaerococcus prevotii,Anaerococcus,no_match_both,1722,817,6,16,True,1,902,7,14,True,2,diverged_present
+Blautia luti,Blautia,no_match_both,360,36,10,,False,3,171,9,,False,4,fragment_site_unreachable
+Caldalkalibacillus mannanilyticus,Caldalkalibacillus,no_match_both,1710,808,6,17,True,1,212,6,15,False,2,diverged_present
+Effusibacillus consociatus,Effusibacillus,no_match_both,2058,1039,7,18,False,2,1241,5,15,False,1,genuinely_absent
+Geobacillus kaustophilus,Geobacillus,no_match_both,1710,808,5,16,True,1,893,5,10,True,2,diverged_present
+Jeotgalicoccus halotolerans,Jeotgalicoccus,no_match_fwd,1719,817,7,17,True,1,902,4,13,True,1,diverged_present
+Lederbergia lenta,Lederbergia,no_match_both,1713,811,5,5,True,1,896,5,5,True,2,diverged_present
+Lentibacillus juripiscarius,Lentibacillus,no_match_both,2046,1144,7,17,False,2,1234,7,14,False,3,genuinely_absent
+Ligilactobacillus araffinosus,Ligilactobacillus,no_match_rev,1722,817,4,14,True,1,720,7,14,False,3,diverged_present
+Macrococcus equipercicus,Macrococcus,no_match_both,1716,814,7,16,True,1,899,5,12,True,2,diverged_present
+Mammaliicoccus stepanovicii,Mammaliicoccus,no_match_both,1716,814,6,14,True,1,899,5,13,True,2,diverged_present
+Metabacillus litoralis,Metabacillus,no_match_both,1707,808,5,17,True,1,711,6,12,False,2,diverged_present
+Niallia nealsonii,Niallia,no_match_both,1716,811,7,7,True,1,63,7,8,False,2,diverged_present
+Psychrobacillus lasiicapitis,Psychrobacillus,no_match_both,1713,811,5,5,True,1,896,6,6,True,2,diverged_present
+Romboutsia ilealis,Romboutsia,no_match_both,1719,817,5,17,True,1,902,6,14,True,2,diverged_present
+Siminovitchia acidinfaciens,Siminovitchia,no_match_both,1716,814,6,14,True,1,899,6,13,True,2,diverged_present
+Ureibacillus manganicus,Ureibacillus,no_match_both,1713,811,5,5,True,1,896,6,6,True,2,diverged_present
