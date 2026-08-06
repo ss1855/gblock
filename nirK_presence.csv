@@ -1,0 +1,9 @@
+species,genus,phylum,gene_target,hit_count,best_accession,best_title,query
+Atopostipes suicloacalis,Atopostipes,Firmicutes,nirK,0,,,"(""nirK""[Title] OR ""copper-containing nitrite reductase""[Title] OR ""nitrite reductase, copper-containing""[Title]) AND ""Atopostipes suicloacalis""[Organism]"
+Brachybacterium faecium,Brachybacterium,Actinobacteria,nirK,0,,,"(""nirK""[Title] OR ""copper-containing nitrite reductase""[Title] OR ""nitrite reductase, copper-containing""[Title]) AND ""Brachybacterium faecium""[Organism]"
+Yaniella halotolerans,Yaniella,Actinobacteria,nirK,0,,,"(""nirK""[Title] OR ""copper-containing nitrite reductase""[Title] OR ""nitrite reductase, copper-containing""[Title]) AND ""Yaniella halotolerans""[Organism]"
+Nocardiopsis algeriensis,Nocardiopsis,Actinobacteria,nirK,0,,,"(""nirK""[Title] OR ""copper-containing nitrite reductase""[Title] OR ""nitrite reductase, copper-containing""[Title]) AND ""Nocardiopsis algeriensis""[Organism]"
+Nosocomiicoccus ampullae,Nosocomiicoccus,Firmicutes,nirK,0,,,"(""nirK""[Title] OR ""copper-containing nitrite reductase""[Title] OR ""nitrite reductase, copper-containing""[Title]) AND ""Nosocomiicoccus ampullae""[Organism]"
+Ligilactobacillus pobuzihii,Ligilactobacillus,Firmicutes,nirK,0,,,"(""nirK""[Title] OR ""copper-containing nitrite reductase""[Title] OR ""nitrite reductase, copper-containing""[Title]) AND ""Ligilactobacillus pobuzihii""[Organism]"
+Staphylococcus ureilyticus,Staphylococcus,Firmicutes,nirK,0,,,"(""nirK""[Title] OR ""copper-containing nitrite reductase""[Title] OR ""nitrite reductase, copper-containing""[Title]) AND ""Staphylococcus ureilyticus""[Organism]"
+Pseudogracilibacillus auburnensis,Pseudogracilibacillus,Firmicutes,nirK,0,,,"(""nirK""[Title] OR ""copper-containing nitrite reductase""[Title] OR ""nitrite reductase, copper-containing""[Title]) AND ""Pseudogracilibacillus auburnensis""[Organism]"
