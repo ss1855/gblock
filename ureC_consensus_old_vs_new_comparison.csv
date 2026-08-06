@@ -1,5 +1,5 @@
-amplicon_position,old_179pool_base,new_538pool_base
-10,T,A
-20,G,A
-84,G,T
-101,G,C
+amplicon_position,old_179pool_base,new_538pool_base,old_codon,old_amino_acid,new_codon,new_amino_acid,synonymous
+10,T,A,TTC,Phe (F),TAC,Tyr (Y),FALSE
+20,G,A,GAG,Glu (E),GAA,Glu (E),TRUE
+84,G,T,GCC,Ala (A),TCC,Ser (S),FALSE
+101,G,C,ACG,Thr (T),ACC,Thr (T),TRUE
