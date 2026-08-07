@@ -11,7 +11,7 @@ set -uo pipefail
 cd /home/user/gblock
 
 EMAIL="sujan.sth1991@gmail.com"
-GENES=(amoA_AOB nirK nirS nosZ_cladeI nosZ_cladeII)
+GENES=(nirK nirS nosZ_cladeI nosZ_cladeII)
 
 for gene in "${GENES[@]}"; do
     out="${gene}_presence.csv"
