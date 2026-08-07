@@ -50,7 +50,9 @@ import time
 from Bio import Entrez
 
 # Gene name aliases, widen search recall since NCBI records use inconsistent
-# naming across submitters (gene symbol vs. full protein name).
+# naming across submitters (gene symbol vs. full protein name). These are the
+# EXACT phrases checked client-side (see search_gene_verified) to decide
+# whether a candidate record is a true hit.
 GENE_ALIASES = {
     "ureC": ["ureC", "urease subunit alpha", "urease alpha subunit"],
     "amoA_AOB": ["amoA", "ammonia monooxygenase subunit A"],
@@ -63,11 +65,50 @@ GENE_ALIASES = {
     "nosZ_cladeII": ["nosZ", "nitrous oxide reductase"],
 }
 
+# NCBI's esearch backend has a confirmed bug (reproduced against known-good
+# ground truth, not a query-syntax mistake on our end): a [Title] phrase of
+# 3+ words ending in "nitrite reductase" -- e.g. "copper-containing nitrite
+# reductase", "cytochrome cd1 nitrite reductase" -- combined with `AND
+# "<organism>"[Organism]` reliably returns Count=0, even against a record
+# whose title is an exact, verified match. Tried: unquoted phrases,
+# reordered clauses, [ORGN] instead of [Organism], two-step history-based
+# search -- all still 0. The shorter 2-word "nitrite reductase"[Title] alone
+# combines with [Organism] fine, so the bug is specific to 3+-word phrases
+# in that family, not compound phrases or AND-with-Organism in general
+# (ureC's and amoA_AOB's own compound aliases were spot-checked and are
+# unaffected).
+#
+# Workaround: never rely on NCBI's server-side phrase+AND for the exact
+# alias text. Instead, retrieve a candidate set using shorter terms/words
+# that are confirmed to combine safely with [Organism] (ANCHOR_TERMS below),
+# then verify each candidate's actual title against the exact GENE_ALIASES
+# phrases client-side in Python. This is strictly a filter on top of a wider
+# candidate net, so it can only match or improve on the old method's
+# precision, and it fixes recall for the affected genes.
+ANCHOR_TERMS = {
+    "ureC": ["ureC", "urease"],
+    "amoA_AOB": ["amoA", "ammonia", "monooxygenase"],
+    "amoA_AOA": ["amoA", "ammonia", "monooxygenase"],
+    "nirK": ["nirK", "copper-containing"],
+    "nirS": ["nirS", "cd1"],
+    "nosZ_cladeI": ["nosZ", "nitrous"],
+    "nosZ_cladeII": ["nosZ", "nitrous"],
+}
+
 
 def build_query(gene: str, organism: str) -> str:
+    """Human-readable form of what we're searching for -- shown in --dry-run
+    and recorded in the output CSV's `query` column. The actual network
+    query is built by build_candidate_query(); see the ANCHOR_TERMS note."""
     aliases = GENE_ALIASES.get(gene, [gene])
     alias_terms = " OR ".join(f'"{a}"[Title]' for a in aliases)
     return f'({alias_terms}) AND "{organism}"[Organism]'
+
+
+def build_candidate_query(gene: str, organism: str) -> str:
+    terms = ANCHOR_TERMS.get(gene, [gene])
+    term_clause = " OR ".join(f'{t}[Title]' for t in terms)
+    return f'({term_clause}) AND "{organism}"[Organism]'
 
 
 def search_gene(gene: str, organism: str, retmax: int = 5):
@@ -85,6 +126,35 @@ def fetch_summary(ids):
     records = Entrez.read(handle)
     handle.close()
     return records
+
+
+def search_gene_verified(gene: str, organism: str, retmax: int = 20):
+    """Candidate-then-verify search that works around the NCBI phrase+AND
+    bug (see ANCHOR_TERMS docstring above). Returns (count, best_accession,
+    best_title) where count is the number of candidates whose title
+    genuinely contains one of GENE_ALIASES[gene] (case-insensitive), not
+    NCBI's raw esearch Count."""
+    aliases = GENE_ALIASES.get(gene, [gene])
+    aliases_lower = [a.lower() for a in aliases]
+
+    query = build_candidate_query(gene, organism)
+    handle = Entrez.esearch(db="protein", term=query, retmax=retmax)
+    record = Entrez.read(handle)
+    handle.close()
+
+    ids = record["IdList"]
+    if not ids:
+        return 0, "", ""
+
+    summaries = fetch_summary(ids)
+    matches = [
+        s for s in summaries
+        if any(alias in s.get("Title", "").lower() for alias in aliases_lower)
+    ]
+    if not matches:
+        return 0, "", ""
+    best = matches[0]
+    return len(matches), best.get("AccessionVersion", ""), best.get("Title", "")
 
 
 def main():
@@ -117,7 +187,10 @@ def main():
 
     if args.dry_run:
         for _, row in df.iterrows():
-            print(build_query(args.gene, row["Species"]))
+            species = row["Species"]
+            print(build_query(args.gene, species))
+            print("  candidate query (actual network search):",
+                  build_candidate_query(args.gene, species))
         return
 
     done_species = set()
@@ -143,15 +216,9 @@ def main():
             query = build_query(args.gene, species)
             count, best_accession, best_title = -1, "", ""
             try:
-                result = search_gene(args.gene, species)
-                count = int(result["Count"])
-                ids = result["IdList"]
-                if ids:
-                    summaries = fetch_summary(ids[:1])
-                    if summaries:
-                        best_accession = summaries[0].get("AccessionVersion", "")
-                        best_title = summaries[0].get("Title", "")
+                count, best_accession, best_title = search_gene_verified(args.gene, species)
             except Exception as e:
+                count = -1
                 best_accession = f"ERROR: {e}"
 
             writer.writerow({
