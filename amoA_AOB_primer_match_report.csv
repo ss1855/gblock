@@ -1,0 +1,7 @@
+species,mismatch_count_fwd,mismatch_count_rev,amplicon_length,status,boundary_irregular
+Nitrosomonas stercoris,8,10,,insufficient_sequence,True
+Escherichia coli,7,9,673,success,False
+Methylocystis echinoides,6,7,,no_match_order,False
+Nitrosococcus oceani,7,10,,insufficient_sequence,True
+Methylocapsa aurea,7,9,63,success,False
+Methylosinus sporium,6,8,198,success,False

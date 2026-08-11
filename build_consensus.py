@@ -15,6 +15,14 @@ USAGE
         --out-consensus ureC_consensus.fasta \
         --out-conservation ureC_conservation.csv
 
+    # Degenerate primer (contains IUPAC ambiguity codes) -- required for all
+    # gene targets except ureC, or the back-check silently over-counts
+    # mismatches by treating ambiguity codes as literal characters:
+    python build_consensus.py --aligned-fasta nirS_amplicons_aligned.fasta \
+        --fwd-primer AACGYSAAGGARACSGG --rev-primer GASTTCGGRTGSGTCTTSAYGAA \
+        --degenerate --max-mismatches 2 \
+        --out-consensus nirS_consensus.fasta --out-conservation nirS_conservation.csv
+
 REQUIREMENTS
     none beyond the standard library
 """
@@ -24,10 +32,31 @@ import csv
 import math
 from collections import Counter
 
+IUPAC_BASES = {
+    "A": set("A"), "C": set("C"), "G": set("G"), "T": set("T"),
+    "R": set("AG"), "Y": set("CT"), "S": set("GC"), "W": set("AT"),
+    "K": set("GT"), "M": set("AC"),
+    "B": set("CGT"), "D": set("AGT"), "H": set("ACT"), "V": set("ACG"),
+    "N": set("ACGT"), "I": set("ACGT"),  # inosine: treated as matching any base
+}
+
+IUPAC_COMPLEMENT = {
+    "A": "T", "T": "A", "C": "G", "G": "C",
+    "R": "Y", "Y": "R", "S": "S", "W": "W", "K": "M", "M": "K",
+    "B": "V", "V": "B", "D": "H", "H": "D", "N": "N", "I": "I",
+}
+
 
 def revcomp(seq: str) -> str:
     comp = str.maketrans("ACGTN-", "TGCAN-")
     return seq.translate(comp)[::-1]
+
+
+def revcomp_degenerate(primer: str) -> str:
+    """IUPAC-aware reverse complement for a primer that may contain
+    ambiguity codes -- complements base-identity (R=A/G -> Y=C/T), not a
+    literal-character complement."""
+    return "".join(IUPAC_COMPLEMENT[b] for b in reversed(primer.upper()))
 
 
 def parse_fasta(path):
@@ -84,14 +113,21 @@ def find_medoid(headers, seqs_list):
     return headers[best_i], seqs_list[best_i], totals[best_i] / (n - 1)
 
 
-def best_match(seq, primer):
+def best_match(seq, primer, degenerate=False):
+    """If degenerate=True, `primer` may contain IUPAC ambiguity codes and a
+    position matches if the sequence base is one of the code's represented
+    literal bases, not by literal character equality."""
     plen = len(primer)
     if plen > len(seq):
         return None, None
     best_pos, best_mm = None, plen + 1
     for i in range(len(seq) - plen + 1):
         window = seq[i:i + plen]
-        mm = sum(1 for a, b in zip(window, primer) if a != b)
+        if degenerate:
+            mm = sum(1 for a, b in zip(window, primer)
+                      if a not in IUPAC_BASES.get(b, set(a)))
+        else:
+            mm = sum(1 for a, b in zip(window, primer) if a != b)
         if mm < best_mm:
             best_pos, best_mm = i, mm
     return best_pos, best_mm
@@ -104,6 +140,10 @@ def main():
     parser.add_argument("--rev-primer", required=True)
     parser.add_argument("--max-mismatches", type=int, default=4,
                          help="Threshold to report pass/fail on the primer back-check")
+    parser.add_argument("--degenerate", action="store_true",
+                         help="Primers contain IUPAC ambiguity codes (all gene "
+                              "targets except ureC) -- use IUPAC-aware matching "
+                              "for the back-check instead of literal comparison")
     parser.add_argument("--out-consensus", required=True)
     parser.add_argument("--out-conservation", required=True)
     args = parser.parse_args()
@@ -169,11 +209,14 @@ def main():
 
     # --- Back-check both candidates against the original primers ---
     fwd_primer = args.fwd_primer.upper()
-    rev_primer_rc = revcomp(args.rev_primer.upper())
+    if args.degenerate:
+        rev_primer_rc = revcomp_degenerate(args.rev_primer)
+    else:
+        rev_primer_rc = revcomp(args.rev_primer.upper())
     print("\n=== Primer back-check ===")
     for name, seq in [("majority-rule consensus", majority), ("medoid", medoid_seq)]:
-        fp, fmm = best_match(seq, fwd_primer)
-        rp, rmm = best_match(seq, rev_primer_rc)
+        fp, fmm = best_match(seq, fwd_primer, degenerate=args.degenerate)
+        rp, rmm = best_match(seq, rev_primer_rc, degenerate=args.degenerate)
         fwd_ok = fmm is not None and fmm <= args.max_mismatches
         rev_ok = rmm is not None and rmm <= args.max_mismatches
         print(f"{name}: fwd pos={fp} mm={fmm}/{len(fwd_primer)} "

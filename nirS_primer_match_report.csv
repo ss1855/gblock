@@ -1,0 +1,4 @@
+species,mismatch_count_fwd,mismatch_count_rev,amplicon_length,status,boundary_irregular
+Halomonas nitroreducens,0,2,407,success,True
+Halomonas cerina,0,1,407,success,True
+Halomonas campisalis,0,6,,insufficient_sequence,True
