@@ -81,3 +81,10 @@
 === [2026-08-11T01:22:21Z] Starting/resuming nosZ_cladeI -> nosZ_cladeI_presence.csv ===
 === [2026-08-11T01:22:21Z] Finished nosZ_cladeI (exit 0) ===
 === [2026-08-11T01:22:21Z] Starting/resuming nosZ_cladeII -> nosZ_cladeII_presence.csv ===
+=== [2026-08-11T01:28:29Z] Starting/resuming nirK -> nirK_presence.csv ===
+=== [2026-08-11T01:28:31Z] Finished nirK (exit 0) ===
+=== [2026-08-11T01:28:31Z] Starting/resuming nirS -> nirS_presence.csv ===
+=== [2026-08-11T01:28:32Z] Finished nirS (exit 0) ===
+=== [2026-08-11T01:28:32Z] Starting/resuming nosZ_cladeI -> nosZ_cladeI_presence.csv ===
+=== [2026-08-11T01:28:32Z] Finished nosZ_cladeI (exit 0) ===
+=== [2026-08-11T01:28:32Z] Starting/resuming nosZ_cladeII -> nosZ_cladeII_presence.csv ===
