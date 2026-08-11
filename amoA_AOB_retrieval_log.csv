@@ -1,0 +1,8 @@
+species,protein_accession,nucleotide_accession,status,error_message
+Nitrosomonas stercoris,BAO37042.1,AB900134.1,success,
+Escherichia coli,ASQ65679.1,CP009050.1,success,
+Methylocystis echinoides,WP_363345981.1,NZ_CP156084.1,success,
+Nitrosococcus oceani,AAM34728.1,AF509003.1,success,
+Methylocapsa aurea,WP_428990692.1,NZ_CBDIOS010000001.1,success,
+Nitrosomonas halophila,9LEG_U,,failed,no /coded_by qualifier found
+Methylosinus sporium,WP_464537334.1,NZ_AP038943.1,success,

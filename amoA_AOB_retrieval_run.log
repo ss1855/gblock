@@ -1,0 +1,11 @@
+=== [2026-08-11T02:39:19Z] Starting/resuming amoA_AOB sequence retrieval ===
+[1/7] Nitrosomonas stercoris (BAO37042.1): success
+[2/7] Escherichia coli (ASQ65679.1): success
+[3/7] Methylocystis echinoides (WP_363345981.1): success
+[4/7] Nitrosococcus oceani (AAM34728.1): success
+[5/7] Methylocapsa aurea (WP_428990692.1): success
+[6/7] Nitrosomonas halophila (9LEG_U): failed - no /coded_by qualifier found
+[7/7] Methylosinus sporium (WP_464537334.1): success
+
+Done. Sequences written to amoA_AOB_sequences.fasta, log written to amoA_AOB_retrieval_log.csv
+=== [2026-08-11T02:39:43Z] Finished amoA_AOB sequence retrieval (exit 0) ===
