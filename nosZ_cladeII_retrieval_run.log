@@ -147,3 +147,27 @@
 [146/196] Mesorhizobium comanense (WP_171026539.1): success
 [147/196] Bacillus paralicheniformis (XNY22693.1): success
 [148/196] Paenibacillus illinoisensis (WP_110757812.1): success
+[149/196] Paenibacillus lautus (WP_430167351.1): success
+[150/196] Paenibacillus odorifer (WP_076286794.1): success
+[151/196] Paenibacillus polymyxa (WP_215074962.1): success
+[152/196] Paenibacillus senegalensis (WP_010272427.1): success
+[153/196] Paenibacillus silvae (WP_229729759.1): success
+[154/196] Paenibacillus tyrfis (WP_253409892.1): success
+[155/196] Paenibacillus vini (WP_213655240.1): success
+[156/196] Brevibacillus fluminis (WP_441067612.1): success
+[157/196] Brevibacillus ginsengisoli (WP_426930719.1): success
+[158/196] Brevibacillus invocatus (WP_122910816.1): success
+[159/196] Brevibacillus reuszeri (WP_103106830.1): success
+[160/196] Paenibacillus barcinonensis (WP_110899700.1): success
+[161/196] Paenibacillus bouchesdurhonensis (WP_110933512.1): success
+[162/196] Kurthia gibsonii (YFH75974.1): success
+[163/196] Macrococcus goetzii (WP_099577193.1): success
+[164/196] Macrococcus canis (WP_133453671.1): success
+[165/196] Kurthia huakuii (WP_235073469.1): success
+[166/196] Kurthia zopfii (CAQ9103019.1): success
+[167/196] Savagea faecisuis (WP_381013382.1): success
+[168/196] Sporosarcina globispora (WP_053435738.1): success
+[169/196] Cytobacillus solani (WP_056684973.1): success
+[170/196] Desertibacillus haloalkaliphilus (WP_217226663.1): failed - no /coded_by qualifier found
+[171/196] Geobacillus kaustophilus (WP_033010817.1): success
+[172/196] Bacillus cihuensis (WP_028389872.1): success
