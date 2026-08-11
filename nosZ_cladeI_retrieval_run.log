@@ -173,3 +173,28 @@
 [172/196] Bacillus cihuensis (WP_028389872.1): success
 [173/196] Lysinibacillus pakistanensis (WP_429983149.1): success
 [174/196] Lysinibacillus xylanilyticus (WP_337988644.1): success
+[175/196] Cytobacillus oceanisediminis (WP_192908638.1): success
+[176/196] Bacillus thuringiensis (WP_000865665.1): success
+[177/196] Bacillus pseudomycoides (WP_426980460.1): success
+[178/196] Bacillus sanguinis (WP_212956317.1): success
+[179/196] Bacillus stratosphericus (TFU99253.1): success
+[180/196] Bacillus toyonensis (WP_262715029.1): success
+[181/196] Cytobacillus firmus (WP_258760195.1): success
+[182/196] Bacillus tropicus (WP_499709992.1): failed - no /coded_by qualifier found
+[183/196] Bacillus wiedmannii (WP_327987057.1): success
+[184/196] Bacillus massilionigeriensis (WP_075980315.1): success
+[185/196] Compostibacillus humi (WP_188393107.1): success
+[186/196] Mesobacillus jeotgali (WP_226677902.1): success
+[187/196] Mesobacillus thioparans (WP_415814276.1): success
+[188/196] Sphaerobacter thermophilus (WP_012871223.1): success
+[189/196] Kaistella treverensis (WP_089820111.1): success
+[190/196] Gelidibacter pelagius (WP_208233940.1): success
+[191/196] Pontibacter virosus (WP_116544346.1): success
+[192/196] Pontibacter flavimaris (WP_073850478.1): success
+[193/196] Peribacillus loiseleuriae (WP_049681309.1): success
+[194/196] Bacillus badius (WP_285614888.1): success
+[195/196] Alkalihalobacterium elongatum (WP_268884646.1): success
+[196/196] Bacillus proteolyticus (WP_427368186.1): success
+
+Done. Sequences written to nosZ_cladeI_sequences.fasta, log written to nosZ_cladeI_retrieval_log.csv
+=== [2026-08-11T02:48:04Z] Finished nosZ_cladeI sequence retrieval (exit 0) ===

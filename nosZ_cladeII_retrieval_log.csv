@@ -1,0 +1,9 @@
+species,protein_accession,nucleotide_accession,status,error_message
+Pseudogracilibacillus auburnensis,WP_110397147.1,NZ_JBHUHB010000001.1,success,
+Ornithinibacillus gellani,WP_123316088.1,NZ_QTSZ01000029.1,success,
+Cerasibacillus terrae,CAQ6071783.1,CEVRTV010000018.1,success,
+Sporosarcina pasteurii,XEE11172.1,CP160452.1,success,
+Luteimonas dalianensis,XUN68116.1,CP186085.1,success,
+Staphylococcus arlettae,QBN20806.1,MG983072.1,success,
+Ornithinibacillus halophilus,WP_084063223.1,NZ_FQVW01000008.1,success,
+Enterococcus faecium,WP_486504203.1,NZ_JBYAUJ010000749.1,success,
