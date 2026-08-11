@@ -1,0 +1,5 @@
+species,protein_accession,nucleotide_accession,status,error_message
+Halomonas nitroreducens,ACN97376.1,FJ686148.1,success,
+Halomonas cerina,ACV88083.1,GQ384052.1,success,
+Halomonas campisalis,ACN97379.1,FJ686151.1,success,
+Paracoccus pantotrophus,1GQ1_B,,failed,no /coded_by qualifier found

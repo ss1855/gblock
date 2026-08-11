@@ -1,0 +1,8 @@
+=== [2026-08-11T02:42:18Z] Starting/resuming nirS sequence retrieval ===
+[1/4] Halomonas nitroreducens (ACN97376.1): success
+[2/4] Halomonas cerina (ACV88083.1): success
+[3/4] Halomonas campisalis (ACN97379.1): success
+[4/4] Paracoccus pantotrophus (1GQ1_B): failed - no /coded_by qualifier found
+
+Done. Sequences written to nirS_sequences.fasta, log written to nirS_retrieval_log.csv
+=== [2026-08-11T02:42:25Z] Finished nirS sequence retrieval (exit 0) ===
